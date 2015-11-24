@@ -9,10 +9,13 @@ import exam.cases
 
 class fixture(object):
 
-    def __init__(self, thing, *args, **kwargs):
+    def __init__(self, thing, doc=None, *args, **kwargs):
         self.thing = thing
         self.args = args
         self.kwargs = kwargs
+        if doc is None:
+            doc = thing.__doc__
+        self.__doc__ = doc
 
     def __get__(self, testcase, type=None):
         if not testcase:
