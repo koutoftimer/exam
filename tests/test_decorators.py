@@ -47,7 +47,7 @@ class TestFixture(TestCase):
 
     def test_docstring(self):
         self.assertEqual(
-            Dummy().number.__doc__,
+            Dummy.number.__doc__,
             """Some docstring with type annotations."""
         )
 
